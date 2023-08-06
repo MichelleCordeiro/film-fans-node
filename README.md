@@ -22,8 +22,8 @@
 
 Projeto desenvolvido em 3 encontros na 1ª Jornada NodeJS, promovida pela [Rocketseat](https://www.rocketseat.com.br/) e com apoio da [Syngenta Digital](https://www.linkedin.com/company/syngenta-digital-brasil/), instrutor [Josiel Nascimento](https://www.linkedin.com/in/josiel-barbosa-nascimento/).
 
- <!-- [Repositório](https://github.com/MichelleCordeiro/film-fans-node) -->
- <!-- [Deploy](#) -->
+ [Repositório](https://github.com/MichelleCordeiro/film-fans-node)
+ [Deploy](#)
 <br>
 
 <h3> 
@@ -31,7 +31,7 @@ Projeto desenvolvido em 3 encontros na 1ª Jornada NodeJS, promovida pela [Rocke
   Arquitetura
 </h3>
 
-<img src="https://i.postimg.cc/Hx7yvVh1/Captura-de-tela-de-2023-08-01-22-34-42.png" alt="Arquitetura" width="350">
+<img src="https://i.postimg.cc/1tVqBG7L/arquitetura.png" alt="Arquitetura" width="350">
 <br><br>
 
 

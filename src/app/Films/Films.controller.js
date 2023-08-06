@@ -1,67 +1,43 @@
 const { URI } = require('../Utils/routeAnnotation')
+const FilmsService = require('./Films.service')
 
-const createFilm = (req, res) => {
-  const films = [
-    {
-      id: '4444',
-      descr: "Gabriel de volta pra casa",
-      ano: '2003',
-      sinopse: 'Jovem destemido foge de casa afim de criar uma bomba atômica.',
-      imagem: 'http://encurt.png'
-    }
-  ]
+const filmsService = new FilmsService
 
-  res.json(films)
-}
-
-const readAllFilms = (req, res) => {
-  const films = [
-    {
-      id: '4444',
-      descr: "Gabriel de volta pra casa",
-      ano: '2003',
-      sinopse: 'Jovem destemido foge de casa afim de criar uma bomba atômica.',
-      imagem: 'http://encurt.png'
-    },
-    {
-      id: '4445',
-      descr: "Pedrosa amigo da xícara",
-      ano: '1999',
-      sinopse: 'Jovem apaixonado tem um relacionamento inesquecível nas ilhas Java.',
-      imagem: 'http://encurt.png'
-    }
-  ]
-
-  res.json(films)
-}
-
-const findFilmById = (req, res) => {
-  const id = req.params.id
-
-  const films = [
-    {
-      id
-    }
-  ]
-
-  res.json(films)
-}
-
-const updateFilm = (req, res) => {
+const createFilm = async (req, res) => {
   const body = req.body
-  res.json(body)
+  const response = await filmsService.createFilm(body)
+  console.log('Criado: ', response)
+  res.status(201).json()
 }
 
+const readAllFilms = async (req, res) => {
+  const response = await filmsService.readAllFilms()
+  res.status(200).json(response)
+}
 
-const deleteFilm = (req, res) => {
+const findFilmById = async (req, res) => {
   const id = req.params.id
-  res.json(id)
+  const response = await filmsService.findFilmById(id)
+  res.status(200).json(response)
+}
+
+const updateFilm = async (req, res) => {
+  const id = req.params.id
+  const body = req.body
+  const response = await filmsService.updateFilm(id, body)
+  res.status(200).json(response)
+}
+
+const deleteFilm = async (req, res) => {
+  const id = req.params.id
+  const response = await filmsService.deleteFilm(id)
+  res.status(200).json(response)
 }
 
 module.exports = {
-  createFilm: URI('/films', 'POST')(createFilm),
+  createFilmssss: URI('/films', 'POST')(createFilm),
   readAllFilms: URI('/films', 'GET')(readAllFilms),
   findFilmById: URI('/films/:id', 'GET')(findFilmById),
-  updateFilm: URI('/films', 'PUT')(updateFilm),
+  updateFilm: URI('/films/:id', 'PUT')(updateFilm),
   deleteFilm: URI('/films/:id', 'DELETE')(deleteFilm)
 }
