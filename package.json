@@ -4,9 +4,11 @@
   "description": "A API Rocketseat made by Explorer Program",
   "main": "index.js",
   "scripts": {
-    "start": "npx nodemon src/app/index.js",
+    "start": "node src/app/index.js",
+    "dev": "npx nodemon src/app/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "migrate": "npx knex migrate:latest --knexfile ./src/db/knexfile.js"
+    "migrate": "npx knex migrate:latest --knexfile ./src/db/knexfile.js",
+    "ci": "npm run migrate && npm start"
   },
   "author": "Michelle Cordeiro",
   "license": "ISC",
