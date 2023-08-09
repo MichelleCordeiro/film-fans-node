@@ -7,12 +7,7 @@ module.exports = {
 
   development: {
     client: 'postgresql',
-    connection: {
-      database: 'filmfansjornada',
-      user:     'film',
-      password: 'kRy6vJhaeNHbfsqalHYteBQR5uroqHPG',
-      host: 'dpg-cj99deivvtos73cek1pg-a'
-    },
+    connection: "postgres://film:kRy6vJhaeNHbfsqalHYteBQR5uroqHPG@dpg-cj99deivvtos73cek1pg-a.oregon-postgres.render.com/filmfansjornada",
     pool: {
       min: 2,
       max: 10
